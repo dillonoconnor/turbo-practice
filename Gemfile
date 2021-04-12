@@ -56,3 +56,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "turbo-rails", "~> 0.5.9"
+
+gem "bulma-rails", "~> 0.9.1"

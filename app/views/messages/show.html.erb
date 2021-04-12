@@ -1,17 +1,14 @@
-<%= turbo_frame_tag "message" do %>
-
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
   <%= @message.title %>
 </p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @message.content %>
-</p>
-
+<%= turbo_frame_tag "message" do %>
+  <p>
+    <strong>Content:</strong>
+    <%= @message.content %>
+  </p>
 <% end %>
 
 <%= link_to 'Edit', edit_message_path(@message) %> |
