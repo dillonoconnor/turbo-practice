@@ -1,5 +1,20 @@
 <%= turbo_frame_tag dom_id(message) do %>
-<div class="notification is-link m-3">
-  <%= message.content %>
-</div>
+  <div class="notification is-link m-3">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <%= message.content %>
+        </div>
+      </div>
+      <div class="level-right">
+        <div class="level-item">
+          <% if message.liked %>
+            <%= button_to "👍", unlike_path(message), class: "button is-light", method: :delete %>
+          <% else %>
+            <%= button_to "👊", message_likes_path(message), class: "button is-info" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>

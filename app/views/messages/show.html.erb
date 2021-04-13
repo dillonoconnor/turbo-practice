@@ -1,11 +1,1 @@
-<p id="notice"><%= notice %></p>
-
-<%= turbo_frame_tag "message" do %>
-  <p>
-    <strong>Content:</strong>
-    <%= @message.content %>
-  </p>
-<% end %>
-
-<%= link_to 'Edit', edit_message_path(@message) %> |
-<%= link_to 'Back', messages_path %>
+<%= render partial: "message", locals: { message: @message } %>
