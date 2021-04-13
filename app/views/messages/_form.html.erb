@@ -1,4 +1,4 @@
-<%= form_with(model: message) do |form| %>
+<%= form_with(model: message, id: dom_id(message)) do |form| %>
 <% if message.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
@@ -12,7 +12,7 @@
 <% end %>
 
 <div class="field">
-  <%= form.text_field :content, class: "input", placeholder: "Type your message here" %>
+  <%= form.text_field :content, class: "input", placeholder: "Type your message here", autofocus: true %>
 </div>
 
 <div class="actions">

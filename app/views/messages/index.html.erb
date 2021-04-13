@@ -8,6 +8,7 @@
     <%= render @messages %>
   <% end %>
 </div>
-
-  <%= render 'form', message: @message %>
+<%= turbo_frame_tag "new_message_form" do %>
+  <%= render 'messages/form', message: @message %>
+<% end %>
 </section>
