@@ -14,6 +14,9 @@
             <%= button_to "👊", message_likes_path(message), class: "button is-info" %>
           <% end %>
         </div>
+        <div class="level-item">
+          <%= link_to "🗒️", edit_message_path(message), class: "button is-info" %>
+        </div>
       </div>
     </div>
   </div>

@@ -1,21 +1,27 @@
 <%= form_with(model: message, id: dom_id(message)) do |form| %>
-<% if message.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+  <% if message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
 
-    <ul>
-      <% message.errors.each do |error| %>
-        <li><%= error.full_message %></li>
+      <ul>
+        <% message.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="is-flex is-justify-content-space-between">
+    <div class="field is-flex-grow-1 mr-3">
+      <%= form.text_field :content, class: "input", placeholder: "Type your message here", autofocus: true %>
+    </div>
+    <div class="is-flex-grow-0">
+      <% if message.new_record? %>
+        <%= form.submit "Send", class: "button" %>
+      <% else %>
+        <%= form.submit "Cancel", class: "button", target: "_top" %>
+        <%= form.submit "Update", class: "button" %>
       <% end %>
-    </ul>
+    </div>
   </div>
-<% end %>
-
-<div class="field">
-  <%= form.text_field :content, class: "input", placeholder: "Type your message here", autofocus: true %>
-</div>
-
-<div class="actions">
-  <%= form.submit "Send", class: "button" %>
-</div>
 <% end %>

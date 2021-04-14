@@ -3,12 +3,13 @@
 <section class="section">
   <h1 class="title">Messages</h1>
 
-<div class="box mb-3">
-  <%= turbo_frame_tag "message-container" do %>
-    <%= render @messages %>
+  <div class="box mb-3">
+    <%= turbo_frame_tag "message-container" do %>
+      <%= render @messages %>
+    <% end %>
+  </div>
+  
+  <%= turbo_frame_tag "new_message_form" do %>
+    <%= render 'messages/form', message: @message %>
   <% end %>
-</div>
-<%= turbo_frame_tag "new_message_form" do %>
-  <%= render 'messages/form', message: @message %>
-<% end %>
 </section>
