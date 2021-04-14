@@ -19,7 +19,7 @@
       <% if message.new_record? %>
         <%= form.submit "Send", class: "button" %>
       <% else %>
-        <%= form.submit "Cancel", class: "button", target: "_top" %>
+        <%= link_to "Cancel", root_path, class: "button is-danger", "data-turbo_frame": "_top"  %>
         <%= form.submit "Update", class: "button" %>
       <% end %>
     </div>
